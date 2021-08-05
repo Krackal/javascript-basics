@@ -1,61 +1,109 @@
 const getNthElement = (index, array) => {
-  // your code here
+  if (index < array.length) {
+    return array[index];
+  }
 };
 
+//join() returns array as a string
 const arrayToCSVString = array => {
-  // your code here
+  return array.join(",");
 };
 
+//split() divides a string into an ordered list of substrings, puts them into an array, then returns the array
 const csvStringToArray = string => {
-  // your code here
+  return string.split(",");
 };
 
+// Push() adds an item to the end of an array
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
 };
 
+//Concat() used to join two or more arrays.
 const addToArray2 = (element, array) => {
-  // your code here
+  let array2 = array.concat(element);
+  return array2;
 };
 
+//removes or replaces existing elements.
 const removeNthElement = (index, array) => {
-  // your code here
+  array.splice(index, 1);
 };
 
+//use split() to convert numbers to strings.
 const numbersToStrings = numbers => {
-  // your code here
+  return numbers.toString().split(",");
 };
+
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  return strings.map(element => {
+    return element.toUpperCase();
+  });
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  return strings.map(element => {
+    return element
+      .split("")
+      .reverse()
+      .join("")
+  });
 };
 
 const onlyEven = numbers => {
-  // your code here
+  return numbers.filter(num => {
+    return num % 2 === 0;
+  });
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  arrayCopy = array.slice(0, array.length);
+  arrayCopy.splice(index, 1);
+  return arrayCopy;
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  let items = [];
+  for (i = 0; i < vowels.length; i += 1) {
+    for (j = 0; j < strings.length; j++) {
+      if (strings[j].charAt(0) === vowels[i]) {
+        items.push(strings[j])
+      }
+    }
+  }
+  return items;
+
+  /*return strings.filter(string => {
+    return (
+      string[0] === "a" ||
+      string[0] === "a" ||
+      string[0] === "e" ||
+      string[0] === "i" ||
+      string[0] === "o" ||
+      string[0] === "u" ||
+      string[0] === "A" ||
+      string[0] === "E" ||
+      string[0] === "I" ||
+      string[0] === "O" ||
+      string[0] === "U" ||);
+  };*/
 };
 
 const removeSpaces = string => {
-  // your code here
+  let removeSpaceString = string.replace(/ /g, "");
+  return removeSpaceString;
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  const add = (a, b) => a + b;
+  return numbers.reduce(add);
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  strings.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
+  return strings;
 };
 
 module.exports = {
